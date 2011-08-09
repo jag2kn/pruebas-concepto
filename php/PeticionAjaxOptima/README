@@ -1,0 +1,15 @@
+La idea es hacer peticiones ajax simulando una petición asincronica
+
+Para esto se realiza una petición y el servidor realiza n intentos
+de responder exitosamente, si encuentra una respuesta la devuelve
+apenas se de cuenta.
+
+Si no la encuentra retorna vacio (o el codigo de error que quieran)
+y el cliente hace una nueva petición
+
+Es importante variar los parametros de tiempos de espera en cada
+caso
+
+
+La señal para el dato correcto la envía senal.php que en este caso
+almacena un numero aleatorio en un archivo (la respuesta del cliente).
