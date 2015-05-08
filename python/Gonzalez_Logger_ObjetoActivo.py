@@ -4,6 +4,9 @@ import Queue
 import time
 import random
 
+# Jorge Gonzalez
+# Ejemplo ejecucion: https://github.com/jag2kn/pruebas-concepto/blob/master/python/Gonzalez_Logger_ObjetoActivo.ipynb
+
 
 class ImplementadoLoggerHilo(threading.Thread):
 
@@ -15,11 +18,12 @@ class ImplementadoLoggerHilo(threading.Thread):
 		threading.Thread.__init__(self)
 		self.colaMensajes = Queue.Queue()
 		self.terminar = False
-		self.f = open('archivo.log', 'w')
+		self.f = open('archivo.log', 'w', 0)
 		print ("Inicio\tLogger")
 
 	def escribir(self,mensaje):
 		self.f.write(mensaje+"\n")
+		self.f.flush()
 
 	def run(self):
 		while not (self.terminar and self.colaMensajes.empty()):
